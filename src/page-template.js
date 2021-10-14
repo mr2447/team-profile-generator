@@ -1,6 +1,7 @@
+
 //export function to generate entore page 
-generatePage = () => {
-return `
+function generatePage() {
+    return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,7 @@ return `
 </head>
 <body>
 <p>Page generated!</p>
+<p>The Employee's name is $</p>
 </body>
 </html>
 `;
