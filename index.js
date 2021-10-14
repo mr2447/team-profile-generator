@@ -2,7 +2,7 @@ const fs = require('fs');
 const generatePage = require('./src/page-template.js');
 console.log(generatePage)
 
-fs.writeFile('./dist/index.html',JSON.stringify(generatePage), err => {
+fs.writeFile('./dist/index.html',JSON.stringify(generatePage()), err => {
     if(err) {
         console.log(err);
         return;
