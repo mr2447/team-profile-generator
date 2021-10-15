@@ -1,6 +1,6 @@
 
 //export function to generate entore page 
-function generatePage() {
+function generatePage(manager) {
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,11 @@ function generatePage() {
 </head>
 <body>
 <p>Page generated!</p>
-<p>The Employee's name is $</p>
+<p>The Employee's name is ${manager.getName()}</p>
+<p>Id: ${manager.getId()}</p>
+<p>email: ${manager.getEmail()}</p>
+<p>Role: ${manager.getRoles()}</p>
+<p>Office#: ${manager.getOfficeNumber()}</p>
 </body>
 </html>
 `;
