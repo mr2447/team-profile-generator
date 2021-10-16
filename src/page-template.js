@@ -15,11 +15,11 @@ function generatePage(team) {
 </head>
 <body>
 <p>Page generated!</p>
-<p>The Employee's name is ${team.Manager.getName()}</p>
-<p>Id: ${team.Manager.getId()}</p>
-<p>email: ${team.Manager.getEmail()}</p>
-<p>Role: ${team.Manager.getRoles()}</p>
-<p>Office#: ${team.Manager.getOfficeNumber()}</p>
+<p>The Employee's name is ${getName}</p>
+<p>Id: ${getId}</p>
+<p>email: ${getEmail}</p>
+<p>Role: ${getRoles}</p>
+<p>Office#: ${getOfficeNumber}</p>
 </body>
 </html>
 `;
