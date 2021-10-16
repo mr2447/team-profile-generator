@@ -17,13 +17,15 @@ const Manager = require('./lib/Manager.js')
 const Engineer =require('./lib/Engineer.js')
 const Intern = require('./lib/Intern.js');
 const generatePage = require('./src/page-template.js');
+const Prompt = require('inquirer/lib/prompts/base');
 
 let manager;
 const team = [];
 
 //Create an array of questrions for user input
 
-const managerPrompt = [
+const managerPrompt = () => {
+  return prompt([
     {
         type: 'input',
         name: 'name',
@@ -43,15 +45,24 @@ const managerPrompt = [
         type: 'number',
         name: 'officeNumber',
         message: 'What is your office number?'
-    },
-    {
-        type: 'list',
-        name: 'employeeType',
-        message: 'What type of empliyee would you like to add to the team?',
-        choices: ['Engineer', 'Intern', 'createTeam']
     }
-];
+  ])
+  .then(answers => {
+    const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+    team.push(manager)
+  })
+};
 
+const menuPrompt =() => {
+    return prompt([
+        {
+            type: 'list',
+            name: 'employeeType',
+            message: 'What type of empliyee would you like to add to the team?',
+            choices: ['Engineer', 'Intern', 'createTeam']
+        }
+    ])
+}
 const engineerPrompt = () => {
     return prompt([
         {
@@ -75,6 +86,11 @@ const engineerPrompt = () => {
             message: 'What is your github username?',
         }
     ])
+    .then(answers => {
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+        team.push(engineer)
+        console.log(team)
+    })
 }
 
 //Create a function to write html file
@@ -90,27 +106,21 @@ function writeFile(employee) {
 
 //create a funciton to initiate app
 function init() {
-    return prompt(managerPrompt)
+    managerPrompt();
+    menuPrompt()
     .then(answers => {
-        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
-        team.push(manager)
-        switch (answers.employeeType) {
+     switch (answers.employeeType) {
             case 'Engineer': 
                 engineerPrompt()
-                .then(answers => {
-                    const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
-                    team.push(engineer)
-                    console.log(team)
-                    prompt(managerPrompt[4])
-                })
-                
+                menuPrompt()  
             case 'Intern':
                 //internPrompt();
-                prompt(managerPrompt[4])
+                //prompt(managerPrompt[4])
             case 'createTeam':
                 //writeFile()
         }
-    })
+    });
+    
 
 };
 
