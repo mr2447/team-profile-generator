@@ -66,16 +66,18 @@ const menuPrompt =() => {
     .then(answer => {
         switch (answer) { 
            case 'Engineer':
-               console.log(answer); 
                engineerPrompt()
-               .then(menuPrompt) 
+               .then(menuPrompt)
+               break; 
            case 'Intern':
                internPrompt()
                .then(menuPrompt)
+               break;
            case 'createTeam':
                //writeFile()
+               break;
         }
-           
+        console.log(answer); 
     });
       
 }
