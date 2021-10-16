@@ -63,6 +63,21 @@ const menuPrompt =() => {
             choices: ['Engineer', 'Intern', 'createTeam']
         }
     ])
+    .then(answer => {
+        switch (answer) { 
+           case 'Engineer':
+               console.log(answer); 
+               engineerPrompt()
+               .then(menuPrompt) 
+           case 'Intern':
+               internPrompt()
+               .then(menuPrompt)
+           case 'createTeam':
+               //writeFile()
+        }
+           
+    });
+      
 }
 const engineerPrompt = () => {
     return prompt([
@@ -138,20 +153,6 @@ function writeFile(employee) {
 function init() {
     managerPrompt()
     .then(menuPrompt)
-    .then(answers => {
-     switch (answers.employeeType) {
-        case 'Engineer': 
-            engineerPrompt()
-            .then(menuPrompt) 
-        case 'Intern':
-            internPrompt()
-            .then(menuPrompt)
-        case 'createTeam':
-            //writeFile()
-        }
-    });
-    
-
 };
 
 //function createTeam() {
