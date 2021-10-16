@@ -19,7 +19,7 @@ const Intern = require('./lib/Intern.js');
 const generatePage = require('./src/page-template.js');
 const Prompt = require('inquirer/lib/prompts/base');
 
-let manager;
+//let manager;
 const team = [];
 
 //Create an array of questrions for user input
@@ -50,6 +50,7 @@ const managerPrompt = () => {
   .then(answers => {
     const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
     team.push(manager)
+    console.log(team)
   })
 };
 
@@ -106,18 +107,18 @@ function writeFile(employee) {
 
 //create a funciton to initiate app
 function init() {
-    managerPrompt();
-    menuPrompt()
+    managerPrompt()
+    .then(menuPrompt)
     .then(answers => {
      switch (answers.employeeType) {
-            case 'Engineer': 
-                engineerPrompt()
-                menuPrompt()  
-            case 'Intern':
-                //internPrompt();
-                //prompt(managerPrompt[4])
-            case 'createTeam':
-                //writeFile()
+        case 'Engineer': 
+            engineerPrompt()
+            .then(menuPrompt) 
+        case 'Intern':
+            //internPrompt();
+            //prompt(managerPrompt[4])
+        case 'createTeam':
+            //writeFile()
         }
     });
     
