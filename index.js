@@ -64,17 +64,17 @@ const menuPrompt =() => {
         }
     ])
     .then(answer => {
-        switch (answer) { 
-           case 'Engineer':
-               engineerPrompt()
-               .then(menuPrompt)
-               break; 
-           case 'Intern':
-               internPrompt()
-               .then(menuPrompt)
-               break;
+        switch (answer.employeeType) { 
+        //    case 'Engineer':
+        //        engineerPrompt()
+        //        .then(menuPrompt)
+        //        break; 
+        //    case 'Intern':
+        //        internPrompt()
+        //        .then(menuPrompt)
+        //        break;
            case 'createTeam':
-               //writeFile()
+               writeFile(team)
                break;
         }
         console.log(answer.employeeType); 
@@ -142,6 +142,7 @@ const internPrompt = () => {
 }
 //Create a function to write html file
 function writeFile(team) {
+    console.log(team)
     fs.writeFileSync('./dist/index.html', generatePage(team)), err => {
       if(err) {
         console.log(err);
