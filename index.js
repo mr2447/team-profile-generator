@@ -69,22 +69,22 @@ const engineerPrompt = () => {
         {
             type: 'input',
             name: 'name',
-            message: "What is the your name?",   
+            message: "What is the engineer's name?",   
         },
         {
             type: 'input',
             name: 'id',
-            message: 'What is your id?',
+            message: "What is the engineer's id?",
         },
         {
             type: 'input',
             name: 'email',
-            message: 'What is your email?'
+            message: "What is engineer's email?"
         },
         {
             type: 'github',
             name: 'github',
-            message: 'What is your github username?',
+            message: "What is engineer's github username?",
         }
     ])
     .then(answers => {
@@ -92,8 +92,35 @@ const engineerPrompt = () => {
         team.push(engineer)
         console.log(team)
     })
-}
+};
 
+const internPrompt = () => {
+    return prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is the intern's name?",
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is intern's id?",
+        },
+        {
+            typpe: 'input',
+            name: 'email',
+            message: "What is intern's email?",
+        },
+        {
+            type: 'input',
+            name: 'school',
+            messag: "What is intern's school?"
+        },
+    ])
+    .then(answers => {
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
+    })
+}
 //Create a function to write html file
 function writeFile(employee) {
     fs.writeFileSync('./dist/index.html', generatePage(employee)), err => {
@@ -115,7 +142,7 @@ function init() {
             engineerPrompt()
             .then(menuPrompt) 
         case 'Intern':
-            //internPrompt();
+            internPrompt();
             //prompt(managerPrompt[4])
         case 'createTeam':
             //writeFile()
