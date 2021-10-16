@@ -77,7 +77,7 @@ const menuPrompt =() => {
                //writeFile()
                break;
         }
-        console.log(answer); 
+        console.log(answer.employeeType); 
     });
       
 }
@@ -141,8 +141,8 @@ const internPrompt = () => {
     })
 }
 //Create a function to write html file
-function writeFile(employee) {
-    fs.writeFileSync('./dist/index.html', generatePage(employee)), err => {
+function writeFile(team) {
+    fs.writeFileSync('./dist/index.html', generatePage(team)), err => {
       if(err) {
         console.log(err);
         return;
