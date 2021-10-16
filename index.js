@@ -119,6 +119,8 @@ const internPrompt = () => {
     ])
     .then(answers => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
+        team.push(intern);
+        console.log(team)
     })
 }
 //Create a function to write html file
@@ -142,8 +144,8 @@ function init() {
             engineerPrompt()
             .then(menuPrompt) 
         case 'Intern':
-            internPrompt();
-            //prompt(managerPrompt[4])
+            internPrompt()
+            .then(menuPrompt)
         case 'createTeam':
             //writeFile()
         }
