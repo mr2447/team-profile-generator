@@ -48,7 +48,7 @@ const managerPrompt = () => {
     }
   ])
   .then(answers => {
-    const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+    const manager = new Manager(answers.name, answers.email, answers.id, answers.officeNumber)
     team.push(manager)
     console.log(team)
   })
@@ -65,19 +65,18 @@ const menuPrompt =() => {
     ])
     .then(answer => {
         switch (answer.employeeType) { 
-        //    case 'Engineer':
-        //        engineerPrompt()
-        //        .then(menuPrompt)
-        //        break; 
-        //    case 'Intern':
-        //        internPrompt()
-        //        .then(menuPrompt)
-        //        break;
+           case 'Engineer':
+               engineerPrompt()
+               .then(menuPrompt)
+               break; 
+           case 'Intern':
+               internPrompt()
+               .then(menuPrompt)
+               break;
            case 'createTeam':
                writeFile(team)
                break;
         }
-        console.log(answer.employeeType); 
     });
       
 }
@@ -150,7 +149,15 @@ function writeFile(team) {
       }
       console.log('Profile generated, Check out index.html to see the output!');
     }
-}
+    fs.copyFile('./src/style.css', './dist/style.css', err =>{
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log('Style sheet copied successfully!')
+        }
+    });
+};
 
 //create a funciton to initiate app
 function init() {
