@@ -5,12 +5,12 @@
   
   This App is open source software licensed as MIT.
   ## Table of Contents
-  * [Description](https://github.com/mr2447/potential-enigma/tree/main/Develop/dist#description)
-  * [Installation](https://github.com/mr2447/potential-enigma/tree/main/Develop/dist#installation)
-  * [Usage](https://github.com/mr2447/potential-enigma/tree/main/Develop/dist#usage)
-  * [Tests](https://github.com/mr2447/potential-enigma/tree/main/Develop/dist#tests)
-  * [Credits](https://github.com/mr2447/potential-enigma/tree/main/Develop/dist#Credits)
-  * [Questions](https://github.com/mr2447/potential-enigma/tree/main/Develop/dist#questions)
+  * [Description](https://github.com/mr2447/team-profile-generator#description)
+  * [Installation](https://github.com/mr2447/team-profile-generator#installation)
+  * [Usage](https://github.com/mr2447/team-profile-generator#usage)
+  * [Tests](https://github.com/mr2447/team-profile-generator#tests)
+  * [Credits](https://github.com/mr2447/team-profile-generator#credits)
+  * [Questions](https://github.com/mr2447/team-profile-generator#quesions)
   ## Description: 
   For Managers to generate a webpage that displays his/hers' team basic info So that their emails and Github profiles can be quickly accessed.
   ## Installation: 
