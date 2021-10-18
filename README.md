@@ -17,7 +17,7 @@
   npm install inquirer
   ## Usage
   * ![terminal in VS](../assets/images/team-profile-generator.jpeg)
-  * ![terminal in VS](../assets/videos/https://youtu.be/NjELjHDJw4g)
+  * ![terminal in VS](https://youtu.be/NjELjHDJw4g)
   ## Credits 
   Marvin Ren https://github.com/mr2447/team-profile-generator
   ## Tests
