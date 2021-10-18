@@ -18,6 +18,10 @@
   ## Usage
   * ![terminal in VS](./assets/images/team-profile-generator.jpeg)
   * ![https://youtu.be/NjELjHDJw4g](https://youtu.be/NjELjHDJw4g)
+
+https://user-images.githubusercontent.com/87793335/137667138-2bbfae21-949b-4603-9c2b-7b46f3313ced.mp4
+
+
   ## Credits 
   Marvin Ren https://github.com/mr2447/team-profile-generator
   ## Tests
