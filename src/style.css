@@ -1,18 +1,15 @@
-.card-container {
+.container-md {
     display: flex;
-    /* this is a mobile style that will be overridden in media queries */
     flex-direction: row;
-    align-items: baseline;
-    padding-top: 1rem;
 }
+
 .employee-card {
     background-color: #f6f7f9;
+
 }
 .card-header {
     background-color: #106cfc;
     color: white;
 };
-
-
   
 

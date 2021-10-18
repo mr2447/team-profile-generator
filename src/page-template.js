@@ -2,7 +2,7 @@ function renderTeam (team) {
     const cards = []
     team.forEach(employee => {
         const html = employee.getRole() === 'Engineer' ?
-        `<div class="card employee-card">
+        `<div class="card col-sm-3 col-lg-3 mx-3 d-inline-flex employee-card">
         <div class="card-header">
             <h2 class="card-title">${employee.name}</h2>
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
@@ -10,33 +10,33 @@ function renderTeam (team) {
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${employee.id}</li>
-                <li class="list-group-item">Email: <a href="mailto.${employee.email}">${employee.email}</a></li>
-                <li class="list-group-item">Github: <a href="${employee.github}.com" target="_blank">${employee.github}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${employee.github}" target="_blank">${employee.github}</a></li>
             </ul>
         </div>        
       </div>` : employee.getRole() ==='Intern' ? 
-        `<div class="card employee-card">
+        `<div class="card col-sm-3 col-lg-3 mx-3 d-inline-flex employee-card">
         <div class="card-header">
             <h2 class="card-title">${employee.name}</h2>
-            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
+            <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${employee.id}</li>
-                <li class="list-group-item">Email: <a href="mailto.${employee.email}">${employee.email}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                 <li class="list-group-item">School: ${employee.school}</li>
             </ul>
         </div>        
       </div>` : employee.getRole() === 'Manager' ? 
-        `<div class="card employee-card">
+        `<div class="card col-sm-3 col-lg-3 mx-3 d-inline-flex employee-card">
         <div class="card-header">
             <h2 class="card-title">${employee.name}</h2>
-            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Manager</h3>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${employee.id}</li>
-                <li class="list-group-item">Email: <a href="mailto.${employee.email}">${employee.email}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                 <li class="list-group-item">Office Number: ${employee.officeNumber}</li>
             </ul>
         </div>        
@@ -62,8 +62,8 @@ function generatePage(team) {
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p>Page generated!</p>
-<div class="card-container">
+<h1 class="fs-1 fw-bold text-light text-center py-3 x-auto" style="background-color:#e84856">My Team</h1>
+<div class="row mt-4 g-3 x-auto">
 ${renderTeam(team)}
 </div>
 </body>
@@ -72,3 +72,5 @@ ${renderTeam(team)}
 };
 
 module.exports = generatePage
+
+//class="container-md position-absolute ">
